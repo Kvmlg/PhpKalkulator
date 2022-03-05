@@ -2,13 +2,40 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
+	<style>
+		body{
+			background-color:#333333;
+		}
+
+		input[type=text]{
+			border: 3px solid #555;
+  			padding: 8px 3px;
+			margin: 20px 20;
+			width: 240px;
+		}
+
+		select{
+			border: 3px solid #555;
+  			padding: 8px 3px;
+			margin: 20px 20;
+			width: 250px;
+			text-align:center;
+		}
+
+		input[type=submit]{
+			background-color:orange;
+  			padding: 8px 3px;
+			margin: 20px 20;
+			width: 120px;
+		}
+	</style>
 <meta charset="utf-8" />
 <title>Kalkulator</title>
 </head>
 <body>
 
 <form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
-<div class="Kalk" style="position: absolute; top:20%; left:43%;">
+<div class="Kalk" style="position: absolute; top:20%; left:40%;">
 <h1><center>Kalkulator ratalny</center></h1>
 <table style="border-spacing: 10px;">
 	<tr>
@@ -41,17 +68,17 @@
 <?php
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
-		echo '<ol style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f88; width:300px;">';
+		echo '<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:whiet;">';
 		foreach ( $messages as $key => $msg ) {
-			echo '<li>'.$msg.'</li>';
+			echo $msg.'<br>';
 		}
-		echo '</ol>';
+		echo '</div>';
 	}
 }
 ?>
 
 <?php if (isset($result)){ ?>
-<div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #ff0; width:300px;">
+<div style="margin: 20px; padding: 10px; border-radius: 5px; text-align:center; color:black;">
 <?php echo 'Miesięczna rata kredytu to: '.$result; ?>
 </div>
 <?php } ?>
