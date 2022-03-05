@@ -21,6 +21,7 @@
   			padding: 8px 3px;
 			margin: 20px 20;
 			width: 240px;
+			background-color:#181818 ;
 		}
 
 		select{
@@ -29,10 +30,12 @@
 			margin: 20px 20;
 			width: 250px;
 			text-align:center;
+			background-color:#181818;
+			color:white;
 		}
 
 		input[type=submit]{
-			background-color:orange;
+			background-color:#FF8C00;
   			padding: 8px 3px;
 			margin: 20px 20;
 			width: 120px;
