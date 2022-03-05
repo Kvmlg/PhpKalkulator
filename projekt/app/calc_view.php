@@ -4,7 +4,16 @@
 <head>
 	<style>
 		body{
-			background-color:#333333;
+			background-color:#181818;
+			color:while;
+		}
+
+		label{
+			color:white;
+		}
+
+		h1{
+			color:white;
 		}
 
 		input[type=text]{
@@ -68,7 +77,7 @@
 <?php
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
-		echo '<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:whiet;">';
+		echo '<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:white;">';
 		foreach ( $messages as $key => $msg ) {
 			echo $msg.'<br>';
 		}
@@ -78,7 +87,7 @@ if (isset($messages)) {
 ?>
 
 <?php if (isset($result)){ ?>
-<div style="margin: 20px; padding: 10px; border-radius: 5px; text-align:center; color:black;">
+<div style="margin: 20px; padding: 10px; border-radius: 5px; text-align:center; color:white;">
 <?php echo 'Miesięczna rata kredytu to: '.$result; ?>
 </div>
 <?php } ?>
