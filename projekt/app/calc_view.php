@@ -1,4 +1,3 @@
-<?php require_once dirname(__FILE__) .'/../config.php';?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
@@ -22,6 +21,7 @@
 			margin: 20px 20;
 			width: 240px;
 			background-color:#181818 ;
+			color:white;
 		}
 
 		select{
@@ -46,13 +46,18 @@
 </head>
 <body>
 
-<form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
+<div style="width:90%; margin: 2em auto;">
+	<a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php" class="pure-button">kolejna chroniona strona</a>
+	<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
+</div>
+
+<form action="<?php print(_APP_ROOT); ?>/app/calc.php" method="post" class="pure-form pure-form-stacked">
 <div class="Kalk" style="position: absolute; top:20%; left:40%;">
 <h1><center>Kalkulator ratalny</center></h1>
 <table style="border-spacing: 10px;">
 	<tr>
 		<td><label for="id_x">Podaj kwotę kredytu: </label></td>
-		<td><input id="id_x" type="text" name="x" value="<?php if(isset($x)) print($x); ?>" /></td>
+		<td><input id="id_x" type="text" name="x" value="<?php out($x) ?>" /></td>
 	</tr>
 	<tr>
 		<td><label for="id_op">Okres spłaty: </label></td>
@@ -71,7 +76,7 @@
 	</tr>
 	<tr>
 		<td><label for="id_y">Wprowadź oprocentowanie: </label></td>
-		<td><input id="id_y" type="text" name="y" placeholder="podaj wartość bez znaku '%'" value="<?php if(isset($x)) print($y); ?>" /><br /></td>
+		<td><input id="id_y" type="text" name="y" placeholder="podaj wartość bez znaku '%'" value="<?php out($y) ?>" /><br /></td>
 	</tr>
 </table>
 	<br><center><input type="submit" value="Oblicz" /></center>
