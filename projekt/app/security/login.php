@@ -1,3 +1,4 @@
+
 <?php
 require_once dirname(__FILE__).'/../../config.php';
 
@@ -63,3 +64,6 @@ if (!validateLogin($form,$messages)) {
 	//"forward"
 	//include _ROOT_PATH.'/index.php';
 }
+
+
+?>

@@ -1,37 +1,44 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
+	
 	<style>
 		body{
-			background-color:#181818;
-			color:while;
+			background-color:#c8c8c8;
+			color:black;
 		}
 
 		label{
-			color:white;
+			color:black;
 		}
 
 		h1{
-			color:white;
+			color:black;
 		}
 
-		input[type=text]{
-			border: 3px solid #555;
+		input[type=text] {
   			padding: 8px 3px;
-			margin: 20px 20;
-			width: 240px;
-			background-color:#181818 ;
+			margin: 20px 20;		
+			width:100%;
 			color:white;
+			display:block;
+			border:none;
+			padding:15px 20px;
+			border-radius:25px;
+			background:#6a6f8c;			
 		}
 
 		select{
-			border: 3px solid #555;
-  			padding: 8px 3px;
+			padding: 8px 3px;
 			margin: 20px 20;
-			width: 250px;
+			width:120%;
+			color:#fff;
+			display:block;
+			border:none;
+			padding:15px 20px;
+			border-radius:25px;
+			background:#6a6f8c;	
 			text-align:center;
-			background-color:#181818;
-			color:white;
 		}
 
 		input[type=submit]{
@@ -40,6 +47,11 @@
 			margin: 20px 20;
 			width: 120px;
 		}
+
+		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  		color: white;
+  		opacity: 1; /* Firefox */
+}
 	</style>
 <meta charset="utf-8" />
 <title>Kalkulator</title>
@@ -84,7 +96,7 @@
 <?php
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
-		echo '<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:white;">';
+		echo '<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:Red;">';
 		foreach ( $messages as $key => $msg ) {
 			echo $msg.'<br>';
 		}
