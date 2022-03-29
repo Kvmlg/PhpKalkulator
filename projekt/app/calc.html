@@ -1,0 +1,55 @@
+{extends file="../templates/main.html"}
+
+
+{block name=content}
+<h1><center>Kalkulator ratalny</center></h1>
+<form class="pure-form pure-form-stacked" action="{$app_url}/app/calc.php" method="post">
+
+	<table style="border-spacing: 10px;">
+	<tr>
+		<td><label for="id_x">Podaj kwotę kredytu: </label></td>
+		<td><input id="id_x" type="text" name="x" value="{$form['x']}" /></td>
+	</tr>
+	<tr>
+		<td><label for="id_operation" value="{$form['operation']}">Okres spłaty: </label></td>
+		<td><select name="operation" id="operation">
+			<option value="1">Rok</option>
+			<option value="2">Dwa lata</option>
+			<option value="3">Trzy lata</option>
+			<option value="4">Cztery lata</option>
+			<option value="5">Pięć lat</option>
+			<option value="6">Sześć lat</option>
+			<option value="7">Siedem lat</option>
+			<option value="8">Osiem lat</option>
+			<option value="9">Dziewięć lat</option>
+			<option value="10">Dziesięć lat</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td><label for="id_y">Wprowadź oprocentowanie: </label></td>
+		<td><input id="id_y" type="text" name="y" placeholder="podaj wartość bez znaku '%'" value="{$form['y']}" /><br /></td>
+	</tr>
+</table>
+	<br><center><button type="submit">Oblicz</button></center>
+</form>	
+
+
+{if isset($messages)}
+    {if count($messages) > 0} 
+        {foreach  $messages as $msg}
+		<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:Red;">';
+			{$msg}
+		</div>
+        {/foreach}
+	{/if}
+{/if}
+
+
+
+{if isset($result)}
+	<div style="margin: 20px; padding: 10px; border-radius: 5px; text-align:center; color:white;">
+		<p>Miesięczna rata kredytu to: {$result} </p>
+		
+	</div>
+{/if}
+{/block}

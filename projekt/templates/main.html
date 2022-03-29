@@ -51,7 +51,7 @@
 		::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   		color: white;
   		opacity: 1; /* Firefox */
-}
+        }
 	</style>
 <meta charset="utf-8" />
 <title>{$page_title|default:"Tytuł domyślny"}</title>
@@ -59,10 +59,9 @@
 <body>
 
 <div style="width:90%; margin: 2em auto;">
-	<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active" style=":position: absolute; right: 0px; color:Orange;">Wyloguj</a>
+	<a href="{$root_path}/app/security/logout.php" class="pure-button pure-button-active" style=":position: absolute; right: 0px; color:Orange;">Wyloguj</a>
 </div>
 
-<form action="<?php print(_APP_ROOT); ?>/app/calc.php" method="post" class="pure-form pure-form-stacked">
 <div class="Kalk" style="position: absolute; top:20%; left:40%;">
 {block name=content} Domyślna treść zawartości .... {/block}
 
