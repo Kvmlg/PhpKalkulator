@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-30 17:47:31
-  from 'C:\xampp\htdocs\projekt\app\calc.html' */
+/* Smarty version 4.1.0, created on 2022-03-30 18:54:51
+  from 'C:\xampp\htdocs\projekt\app\CalcView.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62447b93aa6920_64630314',
+  'unifunc' => 'content_62448b5b5546d1_97690687',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '76538622873b19112a802e1ab8feec2bc83185b7' => 
+    '2cc98919188b029c58feb9c47c02414ec81cd80a' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\projekt\\app\\calc.html',
-      1 => 1648654100,
+      0 => 'C:\\xampp\\htdocs\\projekt\\app\\CalcView.html',
+      1 => 1648659277,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62447b93aa6920_64630314 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62448b5b5546d1_97690687 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,35 +28,35 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_69140619462447b93a997a5_71168480', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204285756062448b5b5492a5_07081700', 'content');
 ?>
 
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "../templates/main.html");
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, ($_smarty_tpl->tpl_vars['conf']->value->root_path).("/templates/main.html"));
 }
 /* {block 'content'} */
-class Block_69140619462447b93a997a5_71168480 extends Smarty_Internal_Block
+class Block_204285756062448b5b5492a5_07081700 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_69140619462447b93a997a5_71168480',
+    0 => 'Block_204285756062448b5b5492a5_07081700',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <h1><center>Kalkulator ratalny</center></h1>
-<form action="<?php echo $_smarty_tpl->tpl_vars['app_url']->value;?>
+<form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /app/calc.php" method="get">
 
 	<table style="border-spacing: 10px;">
 	<tr>
 		<td><label for="id_x">Podaj kwotę kredytu: </label></td>
-		<td><input id="id_x" type="text" name="x" value="<?php echo $_smarty_tpl->tpl_vars['form']->value['x'];?>
+		<td><input id="id_x" type="text" name="x" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->x;?>
 " /></td>
 	</tr>
 	<tr>
-		<td><label for="id_operation" value="<?php echo $_smarty_tpl->tpl_vars['form']->value['operation'];?>
+		<td><label for="id_operation" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->operation;?>
 ">Okres spłaty: </label></td>
 		<td><select name="operation" id="operation">
 			<option value="1">Rok</option>
@@ -73,7 +73,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 	</tr>
 	<tr>
 		<td><label for="id_y">Wprowadź oprocentowanie: </label></td>
-		<td><input id="id_y" type="text" name="y" placeholder="podaj wartość bez znaku '%'" value="<?php echo $_smarty_tpl->tpl_vars['form']->value['y'];?>
+		<td><input id="id_y" type="text" name="y" placeholder="podaj wartość bez znaku '%'" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->y;?>
 " /><br /></td>
 	</tr>
 </table>
@@ -82,15 +82,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
 
-    <?php if (count($_smarty_tpl->tpl_vars['messages']->value) > 0) {?> 
+    <?php if ($_smarty_tpl->tpl_vars['messages']->value->isError()) {?> 
 		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value, 'msg', false, 'key');
-$_smarty_tpl->tpl_vars['msg']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['msg']->value) {
-$_smarty_tpl->tpl_vars['msg']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['messages']->value->getErrors(), 'err');
+$_smarty_tpl->tpl_vars['err']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
+$_smarty_tpl->tpl_vars['err']->do_else = false;
 ?>
 		<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:Red;">
-			<?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+			<?php echo $_smarty_tpl->tpl_vars['err']->value;?>
 
 		</div>
         <?php
@@ -101,9 +101,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 
 
-<?php if ((isset($_smarty_tpl->tpl_vars['result']->value))) {?>
+<?php if ((isset($_smarty_tpl->tpl_vars['res']->value->result))) {?>
 	<div style="margin: 20px; padding: 10px; border-radius: 5px; text-align:center; color:white;">
-		<p>Miesięczna rata kredytu to: <?php echo $_smarty_tpl->tpl_vars['result']->value;?>
+		<p>Miesięczna rata kredytu to: <?php echo $_smarty_tpl->tpl_vars['res']->value->result;?>
  </p>
 	</div>
 <?php }

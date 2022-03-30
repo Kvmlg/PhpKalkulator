@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-03-29 19:37:10
+/* Smarty version 4.1.0, created on 2022-03-30 18:33:13
   from 'C:\xampp\htdocs\projekt\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_624343c640bcb4_17319106',
+  'unifunc' => 'content_624486499caa79_10028422',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e964e0e6855cfe67f8263fef16d6aa5e995e589b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projekt\\templates\\main.html',
-      1 => 1648571939,
+      1 => 1648657992,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_624343c640bcb4_17319106 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624486499caa79_10028422 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -86,25 +86,25 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 <body>
 
 <div style="width:90%; margin: 2em auto;">
-	<a href="<?php echo $_smarty_tpl->tpl_vars['root_path']->value;?>
-/app/security/logout.php" class="pure-button pure-button-active" style=":position: absolute; right: 0px; color:Orange;">Wyloguj</a>
+	<!--<a href="<?php echo $_smarty_tpl->tpl_vars['root_path']->value;?>
+/app/security/logout.php" class="pure-button pure-button-active" style=":position: absolute; right: 0px; color:Orange;">Wyloguj</a> -->
 </div>
 
 <div class="Kalk" style="position: absolute; top:20%; left:40%;">
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_439460197624343c640b644_19908257', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1535700923624486499ca191_82291177', 'content');
 ?>
 
 
 </body>
 </html><?php }
 /* {block 'content'} */
-class Block_439460197624343c640b644_19908257 extends Smarty_Internal_Block
+class Block_1535700923624486499ca191_82291177 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_439460197624343c640b644_19908257',
+    0 => 'Block_1535700923624486499ca191_82291177',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
