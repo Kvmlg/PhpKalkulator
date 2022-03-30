@@ -10,7 +10,7 @@ function getParams(&$form)
 	$form['operation'] = isset($_REQUEST['operation']) ? $_REQUEST['operation'] : null;
 }
 
-function validate(&$form)
+function validate(&$form, &$messages)
 {
 	if (!(isset($form['x']) && isset($form['y']) && isset($form['operation']))) {
 		return false;
@@ -25,7 +25,7 @@ function validate(&$form)
 	}
 
 
-	if (empty($messages)) {
+	if (count($messages) == 0) {
 
 
 		if (!is_numeric($form['x'])) {
@@ -37,11 +37,11 @@ function validate(&$form)
 		}
 	}
 
-	if (count($messages)>0) return false;
+	if (count($messages) > 0) return false;
 	else return true;
 }
 
-function process(&$form, &$messages, &$result){
+function process(&$form, &$result){
 
 
 	$form['x'] = floatval($form['x']);
@@ -80,7 +80,7 @@ function process(&$form, &$messages, &$result){
 			break;
 	}
 
-	$result = 12;
+	$result = ($form['x'] + (($form['x'] * $form['y']) / 100)) / $months;
 
 }
 $form = array();
@@ -88,8 +88,8 @@ $messages = array();
 $result = null;
 
 getParams($form);
-if (validate($form)) { // gdy brak błędów
-	process($form, $messages, $result);
+if (validate($form, $messages)) { // gdy brak błędów
+	process($form, $result);
 }
 
 

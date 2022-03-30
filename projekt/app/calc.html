@@ -3,7 +3,7 @@
 
 {block name=content}
 <h1><center>Kalkulator ratalny</center></h1>
-<form class="pure-form pure-form-stacked" action="{$app_url}/app/calc.php" method="post">
+<form action="{$app_url}/app/calc.php" method="get">
 
 	<table style="border-spacing: 10px;">
 	<tr>
@@ -34,22 +34,21 @@
 </form>	
 
 
-{if isset($messages)}
+
     {if count($messages) > 0} 
-        {foreach  $messages as $msg}
-		<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:Red;">';
+		{foreach $messages as $key => $msg}
+		<div style="margin: 20px; padding: 10px 10px 10px 30px; border-radius: 5px; text-align:center; color:Red;">
 			{$msg}
 		</div>
         {/foreach}
 	{/if}
-{/if}
+
 
 
 
 {if isset($result)}
 	<div style="margin: 20px; padding: 10px; border-radius: 5px; text-align:center; color:white;">
 		<p>Miesięczna rata kredytu to: {$result} </p>
-		
 	</div>
 {/if}
 {/block}
