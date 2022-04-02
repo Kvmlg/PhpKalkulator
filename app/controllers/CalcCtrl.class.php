@@ -1,15 +1,15 @@
 <?php
 
-require_once 'CalcForm.class.php';
-require_once 'CalcResult.class.php';
+namespace app\controllers;
+use app\forms\CalcForm;
+use app\transfer\CalcResult;
 
 class CalcCtrl {
 
-	private $form;   //dane formularza (do obliczeń i dla widoku)
-	private $result; //inne dane dla widoku
+	private $form;   
+	private $result; 
 
 	public function __construct(){
-		//stworzenie potrzebnych obiektów
 		$this->form = new CalcForm();
 		$this->result = new CalcResult();
 	}
