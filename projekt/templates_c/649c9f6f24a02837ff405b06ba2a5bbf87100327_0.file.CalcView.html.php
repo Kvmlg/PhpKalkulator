@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-03 19:47:20
+/* Smarty version 4.1.0, created on 2022-04-03 20:32:57
   from 'C:\xampp\htdocs\projekt\app\views\CalcView.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6249dda87a9e56_56224541',
+  'unifunc' => 'content_6249e85932c275_77236855',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '649c9f6f24a02837ff405b06ba2a5bbf87100327' => 
     array (
       0 => 'C:\\xampp\\htdocs\\projekt\\app\\views\\CalcView.html',
-      1 => 1649008009,
+      1 => 1649010775,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6249dda87a9e56_56224541 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6249e85932c275_77236855 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,25 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3455358646249dda879d9d1_57794699', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10162002486249e85931d5f7_85270649', 'content');
 ?>
 
 </div><?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_3455358646249dda879d9d1_57794699 extends Smarty_Internal_Block
+class Block_10162002486249e85931d5f7_85270649 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_3455358646249dda879d9d1_57794699',
+    0 => 'Block_10162002486249e85931d5f7_85270649',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+<a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+logout" class="pure-button pure-button-active" style=":position: absolute; right: 0px; color:Orange;">Wyloguj</a> 
 <div class="Kalk2" style="position: absolute; top:20%; left:40%;">
 <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
 /sec.css" />
@@ -80,7 +82,7 @@ calcCompute" method="post">
 " /><br /></td>
 	</tr>
 </table>
-	<br><center><button type="submit">Oblicz</button></center>
+	<br><center><input type="submit" value="Oblicz"></center>
 </form>	
 
 

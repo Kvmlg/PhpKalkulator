@@ -2,6 +2,7 @@
 
 
 {block name=content}
+<a href="{$conf->action_url}logout" class="pure-button pure-button-active" style=":position: absolute; right: 0px; color:Orange;">Wyloguj</a> 
 <div class="Kalk2" style="position: absolute; top:20%; left:40%;">
 <link rel="stylesheet" type="text/css" href="{$conf->app_url}/sec.css" />
 <h1><center>Kalkulator ratalny</center></h1>
@@ -32,7 +33,7 @@
 		<td><input id="id_y" type="text" name="y" placeholder="podaj wartość bez znaku '%'" value="{$form->y}" /><br /></td>
 	</tr>
 </table>
-	<br><center><button type="submit">Oblicz</button></center>
+	<br><center><input type="submit" value="Oblicz"></center>
 </form>	
 
 

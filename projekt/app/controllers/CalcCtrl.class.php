@@ -51,7 +51,7 @@ class CalcCtrl {
 		return ! getMessages()->isError();
 	}
 
-	public function process(){
+	public function action_calcCompute(){
 
 		$this->getparams();
 		if ($this->validate()) {
@@ -91,15 +91,23 @@ class CalcCtrl {
 					$this->months = 120;
 					break;
 			}
-
+			if (inRole('admin')) {
 			$this->result->result = ($this->form->x  + (($this->form->x  * $this->form->y) / 100)) / $this->months;
+			} else {
+			getMessages()->addError('Tylko administrator może wykonać tę operację');
+			}	
 		}
 		$this->generateView();
 	}
 
+	public function action_calcShow(){
+		getMessages()->addInfo('Witaj w kalkulatorze');
+		$this->generateView();
+	}
 
 	public function generateView(){
 
+		getSmarty()->assign('user',unserialize($_SESSION['user']));
 		getSmarty()->assign('page_title', 'Kalkulator');
 		getSmarty()->assign('page_header', 'Szablony Smarty');
 

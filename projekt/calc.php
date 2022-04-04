@@ -1,26 +1,12 @@
 <?php
-
 require_once 'init.php';
 
+getRouter()->setDefaultRoute('calcShow'); // akcja/ścieżka domyślna
+getRouter()->setLoginRoute('login'); // akcja/ścieżka na potrzeby logowania (przekierowanie, gdy nie ma dostępu)
 
+getRouter()->addRoute('calcShow',    'CalcCtrl',  ['user','admin']);
+getRouter()->addRoute('calcCompute', 'CalcCtrl',  ['user','admin']);
+getRouter()->addRoute('login',       'LoginCtrl');
+getRouter()->addRoute('logout',      'LoginCtrl', ['user','admin']);
 
-switch ($action) {
-	default : 
-		include 'check.php';
-		$ctrl = new app\controllers\CalcCtrl();
-		$ctrl->generateView ();
-	break;
-	case 'login': // akcja PUBLICZNA - brak check.php
-		$ctrl = new app\controllers\LoginCtrl();
-		$ctrl->doLogin();
-	break;
-	case 'calcCompute' :
-		$ctrl = new app\controllers\CalcCtrl();
-		$ctrl->process ();
-	break;
-	case 'logout' : // akcja NIEPUBLICZNA
-		include 'check.php';  // KONTROLA
-		$ctrl = new app\controllers\LoginCtrl();
-		$ctrl->doLogout();
-	break;
-}
+getRouter()->go(); //wybiera i uruchamia odpowiednią ścieżkę na podstawie parametru 'action';

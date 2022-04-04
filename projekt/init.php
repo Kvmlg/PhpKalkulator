@@ -1,7 +1,7 @@
 <?php
-require_once dirname(__FILE__).'/core/Config.class.php';
+require_once 'core/Config.class.php';
 $conf = new core\Config();
-include dirname(__FILE__).'/config.php'; 
+require_once 'config.php'; //ustaw konfigurację
 
 function &getConf(){ global $conf; return $conf; }
 
@@ -35,6 +35,15 @@ function &getLoader() {
     return $cloader;
 }
 
+require_once 'core/Router.class.php'; //załaduj i stwórz router
+$router = new core\Router();
+function &getRouter(): core\Router {
+    global $router; return $router;
+}
+
 require_once 'core/functions.php';
 
-$action = getFromRequest('action');
+session_start(); //uruchom lub kontynuuj sesję
+$conf->roles = isset($_SESSION['_roles']) ? unserialize($_SESSION['_roles']) : array(); //wczytaj role
+
+$router->setAction( getFromRequest('action') );
